@@ -9,13 +9,13 @@ import SwiftUI
 
 struct StoryDetailView: View {
     
-    var imageName: String
+    var story: Story
     
     var body: some View {
-        Text("картинка номер \(imageName)")
+        Text("картинка номер \(story.imageName)")
     }
 }
 
 #Preview {
-    StoryDetailView(imageName: "Имя")
+    StoryDetailView(story: Story(imageName: "1", title: "Машинист"))
 }

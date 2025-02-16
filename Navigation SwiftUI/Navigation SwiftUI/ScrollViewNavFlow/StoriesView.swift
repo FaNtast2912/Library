@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StoriesView: View {
-    let router = Router.shared
+    @EnvironmentObject private var router: Router
     
     let stories: [Story] = [
         Story(imageName: "1", title: "Машинист и его машина едут в саратов"),
@@ -50,8 +50,7 @@ struct StoriesView: View {
     }
     
     private func handleStoryTap(story: Story) {
-        // Пример навигации через роутер
-        router.showView(view: .showStory(storyName: story.imageName))
+        router.push(.showStory(story: story))
     }
 }
 

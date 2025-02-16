@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SecondView: View {
-    let router = Router.shared
+    @EnvironmentObject private var router: Router
     
     var body: some View {
         VStack {
             Text("Second view")
             Button(action: {
-                router.showView(view: .thirdView)
+                router.push(.thirdView)
             }) {
                 Text("Go to Third view")
             }

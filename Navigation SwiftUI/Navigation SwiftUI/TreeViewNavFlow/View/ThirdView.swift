@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ThirdView: View {
-    let router = Router.shared
+    @EnvironmentObject private var router: Router
     
     var body: some View {
         VStack {
