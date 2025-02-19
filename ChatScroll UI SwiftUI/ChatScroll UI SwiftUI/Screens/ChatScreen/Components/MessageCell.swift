@@ -39,7 +39,7 @@ struct MessageCell: View {
                         // Действие для ответа
                     },
                     onCopy: {
-                        UIPasteboard.general.string = message.text
+                        // Действие для копирования
                     },
                     onDelete: {
                         // Действие для удаления
