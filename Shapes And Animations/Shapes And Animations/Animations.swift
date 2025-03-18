@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Animations: View {
     let size: CGFloat = 120
+    @State var positionState = CGSize.zero
     @State var rotationAngle: Double = 0
     @State var isRotating = false
     let initialScale: CGFloat = 0.2
@@ -17,6 +18,13 @@ struct Animations: View {
         ZStack {
             makeCircles(for: numberOfCircles)
         }
+        .offset(x: positionState.width, y: positionState.height)
+        .gesture (
+            DragGesture()
+                .onChanged { value in
+                    positionState = value.translation
+                }
+            ) 
         .scaleEffect(CGSize(width: initialScale + rotationAngle / 360,
                             height: initialScale + rotationAngle / 360))
         .frame(width: size, height: size)
